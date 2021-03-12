@@ -13,3 +13,9 @@ Created react app(test-levi) first simply as we need to create product screen fl
 <br><br> push the branch as master first and will use <b>'release'</b> branch further for adding feature.
 
 # test-levi
+Once create the react app using : npx create-react-app test-levi
+install the router module (npm i -g react-router-dom ) as it would be needed to use to pages routing back/for
+
+# Creating two pages Home(ProductList) > Product Description:
+
+Home page would be having Product component to show in grid
