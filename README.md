@@ -1,8 +1,8 @@
 
 # Shoping Grid with pagination /responsive grid:/ Product descripton with Image carousal
 
-- 👋 Hi, I’m Vipin Tomer
-- 👀 I’m using below tech for this ..
+- 👋 Hi, 
+- 👀 I’m using below tech for this project..
 
 # Architecture:
 
@@ -29,7 +29,7 @@ Created react app(test-levi) first simply as we need to create product screen fl
 
 # test-levi (app name)
 Once create the react app using : 
-- npx create-react-app test-levi
+- npx create-react-app test-levi<br>
 install the router module as it would be needed to use to pages routing back/for
 - npm i -g react-router-dom 
 
