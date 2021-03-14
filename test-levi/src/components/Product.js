@@ -22,7 +22,7 @@ class Product extends Component {
       })
       .catch(console.log)
        //mock data 
-      this.setState({ product: productMockData})
+      //this.setState({ product: productMockData})
   
   }
  

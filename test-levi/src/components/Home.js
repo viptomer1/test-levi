@@ -20,7 +20,7 @@ class Home extends Component {
     })
     .catch( console.log)
     //mock data 
-    this.setState({ products: constants.allMockProducts, totalPages: Math.ceil(constants.allMockProducts.length/ this.state.pageLimit), currentPage:1})
+    ///this.setState({ products: constants.allMockProducts, totalPages: Math.ceil(constants.allMockProducts.length/ this.state.pageLimit), currentPage:1})
   }
 
   //method for change page
