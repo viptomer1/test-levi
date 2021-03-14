@@ -1,71 +1,74 @@
 import React, { Component } from 'react';
 import ProductItem from "./ProductItem";
 import './home.css';
+import constants from '../res/constants.js';
 
 class Home extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      products: []
+      products: [], currentProducts: [], currentPage: null ,slideIndex:0, totalPages: null, pageLimit :20
     };
   }
   
   componentDidMount() {
-    fetch('https://api.johnlewis.com/search/api/rest/v2/catalog/products/search/keyword?q=dishwasher&key=AIzaSyDD_6O5gUgC4tRW5f9kxC0_76XRC8W7_mI')
+    fetch( constants.URL_PRODUCT_LIST )
     .then(res => res.json())
     .then((data) => { console.log('Res ---> ',data);
-      this.setState({ products: data.products })
+      this.setState({ products: data.products, totalPages: Math.ceil(data.products.length/ this.state.pageLimit), 
+        currentPage:1})
     })
-    .catch(console.log)
+    .catch( console.log)
+    //mock data 
+    this.setState({ products: constants.allMockProducts, totalPages: Math.ceil(constants.allMockProducts.length/ this.state.pageLimit), currentPage:1})
   }
 
+  //method for change page
+  onPageChanged(n) {
+    const pageLimit = this.state.pageLimit;
+    let slideIndex= this.state.slideIndex;
+    if (n > this.state.totalPages) {slideIndex = 1}
+    if (n < 1) {slideIndex  = this.state.totalPages}
+    const offset = (slideIndex - 1) * pageLimit;
+    const currentProducts = this.state.products.slice(offset, offset + pageLimit);  
+    console.log('<<<<<<  Home page number >>>> ---> ', slideIndex );
+
+    let pageItems = currentProducts.map((product, index) => (
+      <ProductItem
+        context = {this.props}
+        product={product}
+        key={index}
+      />
+    ));
+    this.setState({ pageItems, slideIndex});
+  }
+
+  //Method for sliding pages right/left
+  movePages(n) { 
+    this.onPageChanged(this.state.slideIndex  += n);
+  }
+  //Method to render first time element for 0th index
+  renderFirst(){
+    let slideIndex= this.state.slideIndex;
+    slideIndex = slideIndex+1;
+    let currentProducts = this.state.products.slice(0,  this.state.pageLimit);  
+    console.log('<<<<<<  Home page first==== >>>> ---> ', slideIndex );
+    let pageItems = currentProducts.map((product, index) => (
+        <ProductItem
+          context = {this.props}
+          product={product}
+          key={index}
+        />
+      ));
+    this.setState({ pageItems, slideIndex});
+  }
 
   render() {
-    let products = this.state.products;
-    // [
-    //   {
-    //     "id": "hdmdu0t80yjkfqselfc",
-    //     "name": "shoes",
-    //     "img": "https://johnlewis.scene7.com/is/image/JohnLewis/238008957?", 
-    //     "stock": 10,
-    //     "price": 399.99,
-    //     "shortDesc": "Nulla facilisi. Curabitur at lacus ac velit ornare lobortis.",
-    //     "description": "Cras sagittis. Praesent nec nisl a purus blandit viverra. Ut leo. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Fusce a quam."
-    //   },
-    //   {
-    //     "id": "3dc7fiyzlfmkfqseqam",
-    //     "name": "bags",
-    //     "stock": 20,
-    //     "img": "https://johnlewis.scene7.com/is/image/JohnLewis/238008957?", 
-        
-    //     "price": 299.99,
-    //     "shortDesc": "Nulla facilisi. Curabitur at lacus ac velit ornare lobortis.",
-    //     "description": "Cras sagittis. Praesent nec nisl a purus blandit viverra. Ut leo. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Fusce a quam."
-    //   },
-    //   {
-    //     "id": "aoe8wvdxvrkfqsew67",
-    //     "name": "shirts",
-    //     "stock": 15,
-    //     "img": "https://johnlewis.scene7.com/is/image/JohnLewis/238008957?", 
-        
-    //     "price": 149.99,
-    //     "shortDesc": "Nulla facilisi. Curabitur at lacus ac velit ornare lobortis.",
-    //     "description": "Cras sagittis. Praesent nec nisl a purus blandit viverra. Ut leo. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Fusce a quam."
-    //   },
-    //   {
-    //     "id": "bmfrurdkswtkfqsf15j",
-    //     "name": "shorts",
-    //     "stock": 0,
-    //     "img": "https://johnlewis.scene7.com/is/image/JohnLewis/238008957?", 
-        
-    //     "price": 109.99,
-    //     "shortDesc": "Nulla facilisi. Curabitur at lacus ac velit ornare lobortis.",
-    //     "description": "Cras sagittis. Praesent nec nisl a purus blandit viverra. Ut leo. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Fusce a quam."
-    //   }
-    // ]; 
+    //let products = this.state.products;
+    const { products, pageItems,  currentPage, totalPages ,slideIndex} = this.state;
+    //let products = constants.allMockProducts;
 
-
-
+    //rendering
     return (
       
     <div>
@@ -76,15 +79,15 @@ class Home extends Component {
       <br />
 
       <div className="container">
+        { currentPage && (
+                <span className="current-page d-inline-block h-100 pl-4 text-secondary">
+                  Page <span className="font-weight-bold">{ slideIndex }</span> / <span className="font-weight-bold">{ totalPages }</span>
+                </span>
+              ) }
         <div className="cards">
+       
           {products && products.length ? (
-            products.map((product, index) => (
-              <ProductItem
-                context = {this.props}
-                product={product}
-                key={index}
-              />
-            ))
+            pageItems ? pageItems: this.renderFirst()
           ) : (
             <div className="column">
               <span className="title has-text-grey-light">
@@ -94,21 +97,12 @@ class Home extends Component {
           )}
         </div>
 
-        <div className="is-clearfix">
-              <button
-                className="button is-small is-outlined is-primary   is-pulled-right"
-                onClick={() =>
-                    //selectProduct(product.productId)}
-                this.props.history.push({
-                    pathname: '/product',
-                    state: {
-                        selectedId: '1000000'
-                    }
-                  })}
-              >
-                Next
-              </button>
-            </div>
+        <button className="prev1 mdl-button" style={{borderWidth:'0px', float:'left'}} onClick={() => this.movePages(-1)}>
+          <i className="fa fa-angle-left" style={{fontSize:'30px',color:'grey'}}></i>
+        </button>
+        <button className="next1 mdl-button" style={{borderWidth:'0px', float:'right'}} onClick={() => this.movePages(1)}>
+          <i className="fa fa-angle-right" style={{fontSize:'30px',color:'grey'}}></i>
+        </button>
 
       </div>
     
