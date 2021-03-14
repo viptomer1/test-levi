@@ -14,14 +14,15 @@
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  background-color: #d3d3d352;
+  height: 10vmin;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  /* align-items: center; */
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  font-size: calc(10px + 1vmin);
+  font-weight: normal;
+  color: darkgray;
 }
 
 .App-link {
@@ -35,4 +36,46 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+
+/* Design for Product description but we should put it in differnet css */
+img {
+  vertical-align: middle;
+  align-content: center;
+}
+/* Position the image container (needed to position the left and right arrows) */
+.swipe-container2 {
+  position: relative;
+}
+/* Hide the images by default */
+.mySlides {
+  display: none;
+}
+/* Next & previous buttons */
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 40%;
+  width: auto;
+  padding: 15px;
+  margin-top: 40px;
+  color: white;
+  background-color: lightgray;
+  font-size: 15px;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  -webkit-user-select: none;
+}
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
 }
