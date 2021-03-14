@@ -1,11 +1,17 @@
 
+# Shoping Grid with pagination /responsive grid:/ Product descripton with Image carousal
+
+- 👋 Hi, I’m Vipin Tomer
+- 👀 I’m using below tech for this ..
+
 # Architecture:
 
-Library - Reactjs (Used for creating app and router only) - to save time :)
-Test automation - Jest (Used for test)
-All components - Javascript/css (Everything else is pure Js & css)
 
-I have decided to use a popular libraray Reactjs to create this project. If we create this project in plain js then we have to make multiple controls for screen flow and data flow which we can use from these Js frameworks without writing them.<br>
+- Library - Reactjs (Used for creating app and router only) - to save time :)
+- Test automation - Jest (Used for test)
+- All components - Javascript/css (Everything else is pure Js & css)<br>
+
+- I have decided to use a popular libraray Reactjs to create this project. If we create this project in plain js then we have to make multiple controls for screen flow and data flow which we can use from these Js frameworks without writing them.<br>
 
 I have created component using Js& css instead of using <b>React component</b>. React components are very easy instead.
 
