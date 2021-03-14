@@ -3,6 +3,14 @@ const constants = {
     'URL_PRODUCT_LIST': 'https://api.johnlewis.com/search/api/rest/v2/catalog/products/search/keyword?q=dishwasher&key=AIzaSyDD_6O5gUgC4tRW5f9kxC0_76XRC8W7_mI',
     'URL_PRODUCT_DESC': 'https://api.johnlewis.com/mobile-apps/api/v1/products/',
 
+
+    
+    'PAGE_LIMIT': 20,
+    'ProductTitle':'Products',
+
+
+
+
     'allMockProducts': [{
       "productId": "4131599",
       "type": "product",

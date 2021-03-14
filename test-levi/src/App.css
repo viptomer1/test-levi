@@ -42,7 +42,6 @@
 /* Design for Product description but we should put it in differnet css */
 img {
   vertical-align: middle;
-  align-content: center;
 }
 /* Position the image container (needed to position the left and right arrows) */
 .swipe-container2 {

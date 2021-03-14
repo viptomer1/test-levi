@@ -7,7 +7,7 @@ class Home extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      products: [], currentProducts: [], currentPage: null ,slideIndex:0, totalPages: null, pageLimit :20
+      products: [], currentProducts: [], currentPage: null ,slideIndex:0, totalPages: null, pageLimit : constants.PAGE_LIMIT
     };
   }
   

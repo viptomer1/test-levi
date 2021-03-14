@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './home.css';
 //import MOCK_DATA from '../test/mockData.js';
 import constants from '../res/constants.js';
+import productMockData from '../test/product.json';
 
 class Product extends Component {
   constructor(props) {
@@ -20,6 +21,9 @@ class Product extends Component {
         this.setState({ product: data })
       })
       .catch(console.log)
+       //mock data 
+      this.setState({ product: productMockData})
+  
   }
  
   // Mehtod render
@@ -57,8 +61,6 @@ class Product extends Component {
         
       <div>
 
-
-
       <div className="App-header" style={{ flex: 2, alignItems: 'left' }}>              
         <div className="mdl-layout__header-row" style={{ paddingLeft: '2%'}}>
             <button className="mdl-button" style={{borderWidth:'0px', float:'left'}} onClick={() => this.props.history.goBack()}>
@@ -69,14 +71,14 @@ class Product extends Component {
       </div>
 
         <div className="container">
-          <div className="cards1">
+          <div className="ca">
             {product.title ? (
-              <div className="card1 column is-half">
+              <div className="column is-half">
                 
-                
-                <div className="swipe-container2" style={{
+                <div className="cardsP">
+                <div className="card swipe-container2" style={{
                             width: `95%`, height: `500px`,
-                            backgroundColor: 'grey'
+                            //backgroundColor: 'grey'
                           }}
                         >
                     {product.media.images.urls.map((url, index) => ( 
@@ -95,35 +97,28 @@ class Product extends Component {
                       </button>
 
                 </div>
-
-
-
-                <div className="media-left">
-                      <br />something INFO below -------------------
-                  </div>
-        
-                  <div className="media-content">
+                  <div className="card media-content">
                     
-                    <div>{product.title}</div>
+                    {/* <div>{product.title}</div> */}
                     <b style={{ textTransform: "capitalize" }}>
                       {product.name}{" "}
                       <span className="tag is-primary">£{product.price.now}</span>
                     </b>
                     
-                    <div className="is-clearfix" style={{color:'red'}}> {product.displaySpecialOffer}.</div>
-                    <div className="is-clearfix"> {product.additionalServices.includedServices}</div>
+                    <div className="is-c" style={{color:'red'}}> {product.displaySpecialOffer}.</div>
+                    <div className="is-c"> {product.additionalServices.includedServices}</div>
                     
                   </div>
-                
+                </div>
 
-                <br/><br/>
-                <div className="it-clearfix" style={{fontSize:'20px'}}> Product Information:</div>
-                <br /><br/>
+                <br/>
+                <div className="it-c" style={{fontSize:'20px'}}> Product Information:</div>
+                <br />
                     <div className="it" dangerouslySetInnerHTML={{ __html: product.details.productInformation}} ></div>
                     <br/><div className="it">Product code: {product.code} </div>
                     <br/><hr />
 
-                <div className="it-clearfix" style={{fontSize:'20px'}}> Product specification:</div>
+                <div className="it-c" style={{fontSize:'20px'}}> Product specification:</div>
                 <br /><br/>
               
                 <div className="mdl-layout__header-row" style={{ paddingLeft: '2%'}}>

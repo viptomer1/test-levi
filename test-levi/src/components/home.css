@@ -21,6 +21,13 @@ body { padding: 1rem; }
   /* grid-gap: 1rem; */
 }
 
+.cardsP {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-gap: 5px;
+}
+
 /* Screen larger than 600px? 2 column */
 @media (min-width: 600px) {
   .cards { grid-template-columns: repeat(2, 1fr); }
@@ -34,4 +41,5 @@ body { padding: 1rem; }
 /* Screen larger than 1024px? 4 columns */
 @media (min-width: 1024px) {
   .cards { grid-template-columns: repeat(4, 1fr); }
+  .cardsP { grid-template-columns: repeat(2, 1fr); }
 }
