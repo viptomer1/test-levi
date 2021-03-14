@@ -22,11 +22,16 @@ I can make this app in serveral way like using Angular or Jquery or even usingot
 Created react app(test-levi) first simply as we need to create product screen flow hence using react so that we can flow data between screens.
 <br>Even react app will provide native features for different plateforms as well.
 
-<br><br> push the branch as master first and will use <b>'release'</b> branch further for adding feature.
 
-# test-levi
-Once create the react app using : npx create-react-app test-levi
-install the router module (npm i -g react-router-dom ) as it would be needed to use to pages routing back/for
+<br><br>
+- push the branch as master first and will use <b>'release'</b> branch further for adding feature.
+- <b>master >> release</b>
+
+# test-levi (app name)
+Once create the react app using : 
+- npx create-react-app test-levi
+install the router module as it would be needed to use to pages routing back/for
+- npm i -g react-router-dom 
 
 # Creating two pages Home(ProductList) > Product Description:<br>
 
@@ -36,7 +41,9 @@ Home page would be having Product component to show in grid and Product page wil
 I have created basic tests like first test for loading app header and then one by one to load component.
 <br> So these would be failing until App will loaded properly and load Product title successfully.
 
-Test 1: App load home - 'Product title'<br>
+- Test 1: App load home - 'Product title'<br>
 Test 2: Load product list - 'Product count shown'<br>
 Test 3: Product selected - 'Product selected and switch to desc view'<br>
 Test 4: Product description - 'Product description'<br>
+
+
