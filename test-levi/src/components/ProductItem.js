@@ -1,16 +1,12 @@
 import React from "react";
-import { useHistory } from "react-router-dom";
+//import { useHistory } from "react-router-dom";
 
 const ProductItem = props => { //console.log('Item>>>>>>',props);
   const { product } = props;
   const { context } = props;
-  const history = useHistory();
+  //const history = useHistory();
 
-  //TODO Method for selected id 
-  function selectProduct(selId) {
-    context.selectProductId = selId;
-    history.push("/product" , context);
-  }
+  //render product Item component
   return (
     <div className="card column is-half">
       <div className="box">
