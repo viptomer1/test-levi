@@ -1,7 +1,13 @@
 
 # Architecture:
 
-I have decided to use a popular libraray Reactjs to create this project. If we create this project in plain js then we have to make multiple controls for screen flow and data flow which we can use from these Js frameworks without writing them.
+Library - Reactjs (Used for creating app and router only) - to save time :)
+Test automation - Jest (Used for test)
+All components - Javascript/css (Everything else is pure Js & css)
+
+I have decided to use a popular libraray Reactjs to create this project. If we create this project in plain js then we have to make multiple controls for screen flow and data flow which we can use from these Js frameworks without writing them.<br>
+
+I have created component using Js& css instead of using <b>React component</b>. React components are very easy instead.
 
 I can make this app in serveral way like using Angular or Jquery or even usingother Js frameworking but decided to use react as this is something I am learning now and it will give me handson experience as well as exponse my learnings along with this assignment:)
 
@@ -16,6 +22,15 @@ Created react app(test-levi) first simply as we need to create product screen fl
 Once create the react app using : npx create-react-app test-levi
 install the router module (npm i -g react-router-dom ) as it would be needed to use to pages routing back/for
 
-# Creating two pages Home(ProductList) > Product Description:
+# Creating two pages Home(ProductList) > Product Description:<br>
 
-Home page would be having Product component to show in grid
+Home page would be having Product component to show in grid and Product page will be showing Product description.
+
+# TDD
+I have created basic tests like first test for loading app header and then one by one to load component.
+<br> So these would be failing until App will loaded properly and load Product title successfully.
+
+Test 1: App load home - 'Product title'<br>
+Test 2: Load product list - 'Product count shown'<br>
+Test 3: Product selected - 'Product selected and switch to desc view'<br>
+Test 4: Product description - 'Product description'<br>
