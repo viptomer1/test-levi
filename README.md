@@ -11,6 +11,8 @@ Before going in details please have a look (TO check responsive grid , change pa
 - IF SERVICE FAILED THEN IT WILL SHOW STATIC DATA 
 
 ![image](https://user-images.githubusercontent.com/80127823/111080259-906f4f80-84f5-11eb-9330-2c7cd55b39ca.png)
+![image](https://user-images.githubusercontent.com/80127823/111165213-ad0f9400-8596-11eb-9bc8-5ccd1c514c41.png)
+![image](https://user-images.githubusercontent.com/80127823/111165310-c9abcc00-8596-11eb-8a77-6af4eaa407df.png)
 
 
 # Architecture:
