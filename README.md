@@ -4,9 +4,11 @@
 - 👋 Hi, 
 - 👀 I’m using below tech for this project..
 
-Before going in details please have a look (TO check responsive grid , make change page limit in constant file to show page/total pages)
+Before going in details please have a look (TO check responsive grid , change page limit in <b>res/constant.js</b> file to pagination page/total pages)
 
 <a href="https://viptomer1.github.io/">Demo Product grid & Pagination</a>
+
+- IF SERVICE FAILED THEN IT WILL SHOW STATIC DATA 
 
 ![image](https://user-images.githubusercontent.com/80127823/111080259-906f4f80-84f5-11eb-9330-2c7cd55b39ca.png)
 
@@ -20,9 +22,9 @@ Before going in details please have a look (TO check responsive grid , make chan
 
 - I have decided to use a popular libraray Reactjs to create this project. If we create this project in plain js then we have to make multiple controls for screen flow and data flow which we can use from these Js frameworks without writing them.<br>
 
-I have created component using Js& css instead of using <b>React component</b>. React components are very easy instead.
+I have created component using Js & css instead of using <b>React component</b>. React components are very easy instead.
 
-I can make this app in serveral way like using Angular or Jquery or even usingother Js frameworking but decided to use react as this is something I am learning now and it will give me handson experience as well as exponse my learnings along with this assignment:)
+I can make this app in serveral way like using Angular or Jquery or even using other Js frameworking but decided to use react as this is something I am learning now and it will give me handson experience as well as exponse my learnings along with this assignment:)
 
 
 
@@ -52,5 +54,10 @@ I have created basic tests like first test for loading app header and then one b
 Test 2: Load product list - 'Product count shown'<br>
 Test 3: Product selected - 'Product selected and switch to desc view'<br>
 Test 4: Product description - 'Product description'<br>
+
+ - Finally, thanks for reviewing this page
+ - I have created Home screen with nested components but Product screen is little plain in terms of components<br>
+ - (Please consider Home as well structured code and similar Components should be used in Product screen too)
+ - same )
 
 
