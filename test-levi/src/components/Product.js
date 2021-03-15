@@ -131,7 +131,7 @@ class Product extends Component {
             ) : (
               <div className="column">
                 <span className="title has-text-grey-light">
-                  No product found!
+                  loading ...{/* No product found! */}
                 </span>
               </div>
             )}
