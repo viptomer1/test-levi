@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import './home.css';
-//import MOCK_DATA from '../test/mockData.js';
 import constants from '../res/constants.js';
 import productMockData from '../test/product.json';
 
@@ -59,37 +58,33 @@ class Product extends Component {
     }
 
     //rending the component
-    return (
-        
+    return (   
       <div>
 
-      <div className="App-header" style={{ flex: 2, alignItems: 'left' }}>              
-        <div className="mdl-layout__header-row" style={{ paddingLeft: '2%'}}>
-            <button className="mdl-button" style={{borderWidth:'0px', float:'left'}} onClick={() => this.props.history.goBack()}>
-              <i className="fa fa-angle-left" style={{fontSize:'30px',color:'grey'}}></i>
-              </button>
-              <span className="mdl-layout-title" style={{width:'95%',textAlign:'center',  marginLeft: '2%', display:'block'}}>Product- {product.title}</span>
+        <div className="App-header" style={{ flex: 2, alignItems: 'left' }}>              
+          <div className="mdl-layout__header-row" style={{ paddingLeft: '2%'}}>
+              <button className="mdl-button" style={{borderWidth:'0px', float:'left'}} onClick={() => this.props.history.goBack()}>
+                <i className="fa fa-angle-left" style={{fontSize:'30px',color:'grey'}}></i>
+                </button>
+                <span className="mdl-layout-title" style={{width:'95%',textAlign:'center',  marginLeft: '2%', display:'block'}}>Product- {product.title}</span>
+          </div>
         </div>
-      </div>
-
         <div className="container">
           <div className="ca">
             {product.title ? (
               <div className="column is-half">
                 
                 <div className="cardsP">
-                <div className="card swipe-container2" style={{
-                            width: `95%`, height: `500px`,
-                            //backgroundColor: 'grey'
-                          }}
-                        >
+                 <div className="card swipe-container2" style={{ width: `95%`, height: `500px`}}>
+                   {/* THIS BELOE {code} should BE PLACED IN ANOTHER FUNCTION TO LOAD FIRST TIME ON API SUCCESS LIKE PRODUCT LIST component
+                        And there would be a function will call which loads these nested component -{getProductDetails}
+                    */} 
+                
                     {product.media.images.urls.map((url, index) => ( 
                         <div className="mySlides"  style={{ display:  index === 0 ? 'block':'none' }}>
                           <img alt="" src={url} style={{width:"90%", height:"500px"}}/>
                         </div>
                         )) }
-                      {/* <a className="prev" onClick={() =>plusSlides(-1)}>prev</a>
-                      <a className="next" onClick={() =>plusSlides(1)}>next</a> */}
                       
                       <button className="prev mdl-button" style={{borderWidth:'0px', float:'left'}} onClick={() => moveSlides(-1)}>
                         <i className="fa fa-angle-left" style={{fontSize:'30px',color:'grey'}}></i>
@@ -97,10 +92,8 @@ class Product extends Component {
                       <button className="next mdl-button" style={{borderWidth:'0px', float:'left'}} onClick={() => moveSlides(1)}>
                         <i className="fa fa-angle-right" style={{fontSize:'30px',color:'grey'}}></i>
                       </button>
-
                 </div>
-                  <div className="card media-content">
-                    
+                  <div className="card media-content">          
                     {/* <div>{product.title}</div> */}
                     <b style={{ textTransform: "capitalize" }}>
                       {product.name}{" "}
@@ -127,11 +120,9 @@ class Product extends Component {
                     <span className="mdl-button" style={{borderWidth:'0px', float:'left'}} >Standing</span>
                       <span className="mdl-layout-title" style={{width:'95%',textAlign:'right',  marginLeft: '2%', display:'block'}}>Product- yes</span>
                 </div>
-                <br/><br/>    
-                  
+                <br/><br/>                   
             </div>
               
-
             ) : (
               <div className="column">
                 <span className="title has-text-grey-light">
@@ -142,7 +133,7 @@ class Product extends Component {
           </div>
         </div>
       
-          </div>
+        </div>
       );
   }
 }
