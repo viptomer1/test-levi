@@ -24,37 +24,42 @@ class Product extends Component {
         this.setState({ product: productMockData});
       }
     ) 
+  }
   
+  //Method for showing image slide with numbers
+  showSlides(n) {
+    let slideIndex = this.state.slideIndex;
+    var i;
+    var slides = document.getElementsByClassName("mySlides");
+    var dots = document.getElementsByClassName("demo");
+    if (n > slides.length) {slideIndex = 1}
+    if (n < 1) {slideIndex  = slides.length}
+    for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+    }
+    for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+    }
+    if(slides[slideIndex -1]){
+      slides[slideIndex -1].style.display = "block";
+    }
+
+    this.state.slideIndex =slideIndex;
+
+  }
+
+  //method for moving slide of image
+  moveSlides(n) { console.log('<<<<<<   back ./next >>>> ---> ', n);
+      this.showSlides(this.state.slideIndex  += n);
   }
  
   // Mehtod render
   render() {  
     let product= this.state.product;
     let slideIndex = 1;
-    //Method for show sliding image
-    function showSlides(n) {
-      var i;
-      var slides = document.getElementsByClassName("mySlides");
-      var dots = document.getElementsByClassName("demo");
-      if (n > slides.length) {slideIndex = 1}
-      if (n < 1) {slideIndex  = slides.length}
-      for (i = 0; i < slides.length; i++) {
-          slides[i].style.display = "none";
-      }
-      for (i = 0; i < dots.length; i++) {
-          dots[i].className = dots[i].className.replace(" active", "");
-      }
-      if(slides[slideIndex -1]){
-        slides[slideIndex -1].style.display = "block";
-      }
-
-    }
-    //Method for sliding image right/left
-    function moveSlides(n) { console.log('<<<<<<   back ./next >>>> ---> ', n);
-      showSlides(slideIndex  += n);
-    }
+    //first time show the first image on slider
     if(product.media){
-      showSlides(1 );
+      this.showSlides(1 );
     }
 
     //rending the component
@@ -86,10 +91,10 @@ class Product extends Component {
                         </div>
                         )) }
                       
-                      <button className="prev mdl-button" style={{borderWidth:'0px', float:'left'}} onClick={() => moveSlides(-1)}>
+                      <button className="prev mdl-button" style={{borderWidth:'0px', float:'left'}} onClick={() => this.moveSlides(-1)}>
                         <i className="fa fa-angle-left" style={{fontSize:'30px',color:'grey'}}></i>
                       </button>
-                      <button className="next mdl-button" style={{borderWidth:'0px', float:'left'}} onClick={() => moveSlides(1)}>
+                      <button className="next mdl-button" style={{borderWidth:'0px', float:'left'}} onClick={() => this.moveSlides(1)}>
                         <i className="fa fa-angle-right" style={{fontSize:'30px',color:'grey'}}></i>
                       </button>
                 </div>
