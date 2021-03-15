@@ -20,9 +20,11 @@ class Product extends Component {
       .then((data) => { console.log('Response product---> ',data);
         this.setState({ product: data })
       })
-      .catch(console.log)
-       //mock data 
-      //this.setState({ product: productMockData})
+      .catch((error) =>{
+        //If fails then show MOCK dummy data just for flow
+        this.setState({ product: productMockData});
+      }
+    ) 
   
   }
  
