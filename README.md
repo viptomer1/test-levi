@@ -4,7 +4,7 @@
 - 👋 Hi, 
 - 👀 I’m using below tech for this project..
 
-Before going in details please have a look
+Before going in details please have a look (TO check responsive grid , make change page limit in constant file to show page/total pages)
 
 <a href="https://viptomer1.github.io/">Demo Product grid & Pagination</a>
 
