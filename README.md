@@ -65,6 +65,6 @@ Test 4: Product description - 'Product description'<br>
  - Finally, thanks for reviewing this page
  - I have created Home screen with nested components but Product screen is little plain in terms of components<br>
  - (Please consider Home as well structured code and similar Components should be used in Product screen too)
- - same )
+ - [I have given Home screen with proper components but Product description should use more hooks]
 
 
