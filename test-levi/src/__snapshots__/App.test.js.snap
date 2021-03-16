@@ -1,0 +1,48 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly react-test-renderer 1`] = `
+<div
+  className="card column is-half"
+>
+  <div
+    className="box"
+  >
+    <div
+      className="media"
+    >
+      <div
+        className="media-left"
+      >
+        <img
+          alt="item"
+          className="prodItemsImg"
+          onClick={[Function]}
+          src="//johnlewis.scene7.com/is/image/JohnLewis/238008957?"
+        />
+      </div>
+      <div
+        className="media-content"
+      >
+        <div>
+          item
+        </div>
+        <b
+          style={
+            Object {
+              "textTransform": "capitalize",
+            }
+          }
+        >
+           
+          <span
+            className="tag is-primary"
+          >
+            £
+            120
+          </span>
+        </b>
+      </div>
+    </div>
+  </div>
+</div>
+`;
