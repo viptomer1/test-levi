@@ -55,6 +55,8 @@ Home page would be having Product component to show in grid and Product page wil
 I have created basic tests like first test for loading app header and then one by one to load component.
 <br> So these would be failing until App will loaded properly and load Product title successfully.
 
+-test are covering basic component loading and if blank value provided like no product are passing then title will show 0 items in header
+
 - Test 1: App load home - 'Product title'<br>
 Test 2: Load product list - 'Product count shown'<br>
 Test 3: Product selected - 'Product selected and switch to desc view'<br>
